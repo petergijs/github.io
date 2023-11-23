@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanMachine - Bestelling</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link naar je CSS-bestand voor stijldefinities -->
+  <script src="burger.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Wacht tot de DOM is geladen voordat de code wordt uitgevoerd
+
+      // Zoek het formulier op basis van de ID
+      var form = document.getElementById('bestellingFormulier');
+
+      // Voeg een event listener toe voor het submit-event
+      form.addEventListener('submit', function(event) {
+        // Voorkom dat het standaardgedrag van het formulier plaatsvindt (navigeren naar de 'action'-URL)
+        event.preventDefault();
+
+        // Navigeer naar de bedanktpagina
+        window.location.href = 'bestelling_o.html';
+      });
+    });
+  </script>
+
+</head>
+<body>
+  <header>
+    <div class="container"></div>
+    <h1>CleanMachine</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="producten.html">Producten</a></li>
+        <li><a href="winkelwagen.html">Winkelwagen</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+</div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>Bestelling</h2>
+
+      <form action="bedankt.html" method="POST">
+        <div>
+          <label for="naam">Naam:</label>
+          <input type="text" id="naam" name="naam" required>
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="adres">Adres:</label>
+          <textarea id="adres" name="adres" required></textarea>
+        </div>
+        <div>
+          <label for="betaalmethode">Betaalmethode:</label>
+          <select id="betaalmethode" name="betaalmethode" required>
+            <option value="">-- Selecteer een betaalmethode --</option>
+            <option value="creditcard">Creditcard</option>
+            <option value="paypal">PayPal</option>
+            <option value="ideal">iDEAL</option>
+          </select>
+        </div>
+        <div>
+          <label for="opmerkingen">Opmerkingen:</label>
+          <textarea id="opmerkingen" name="opmerkingen"></textarea>
+        </div>
+        <button type="submit" class="button">Plaats bestelling</button>
+      </form>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 CleanMachine. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+</body>
+</html>
